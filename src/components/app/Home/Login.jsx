@@ -65,7 +65,7 @@ const LoginForm = () => {
           </Box>
           <Checkbox color="#777777">Save username</Checkbox>
           <Text
-            fontSize={{ base: "14px", md: "15px" }}
+            fontSize={{ base: "12px", md: "15px" }}
             fontWeight="400"
             lineHeight="20px"
             color="#444444"
@@ -90,14 +90,17 @@ const LoginForm = () => {
         </Flex>
 
         <Link
+         href="https://www.rmous.org/digital/forgot"
           display="block"
           mt={4}
           color="green.500"
           textAlign="center"
           fontSize={{ base: "14px", md: "16px" }}
+          
         >
           Forget username or password
         </Link>
+        
       </Box>
 
       <InfoBanner />
