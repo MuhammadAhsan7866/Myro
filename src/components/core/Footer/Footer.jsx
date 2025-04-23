@@ -1,116 +1,86 @@
+import React from "react";
 import {
   Box,
-  Container,
-  Stack,
-  SimpleGrid,
-  Text,
-  Link,
-  useColorModeValue,
-  Img,
   Flex,
+  Text,
+  VStack,
+  HStack,
+  Input,
+  Button,
+  Link,
+  SimpleGrid,
+  IconButton,
+  Container,
+} from "@chakra-ui/react";
 
-} from '@chakra-ui/react';
+const Footer = () => {
+  return (
+    <Box bg="#4CAD49">
+      <Container maxW={"1240px"}>
+        <Box color="white" py={10} px={[4, 8, 16]}>
+          <SimpleGrid columns={[1, 1, 3]} spacing={10}>
+            {/* Quick Links */}
+            <VStack align="flex-start" spacing={3}>
+              <Text fontWeight="bold">Quick Links</Text>
+              <Link>help center</Link>
+              <Link>form & agreements</Link>
+              <Link>Location</Link>
+              <Text fontSize="sm">© 2025, RMO. All Rights Reserved.</Text>
+            </VStack>
 
-const ListHeader = ({ children }) => {
-  return (
-    <Text fontWeight={'500'} fontSize={'lg'} mb={2}>
-      {children}
-    </Text>
-  );
-};
-export default function LargeWithAppLinksAndSocial() {
-  return (
-    <Box
-      bg={'black'}
-    p={{base:'25px',sm:'25px',md:'30px',lg:'40px',xl:'50px',xxl:'70px'}}>
-      <Container as={Stack} maxW={'1440px'} py={10}>
-        <SimpleGrid columns={{ base: 1, sm: 2, md: 4 }} spacing={8}>
-          <Stack align={'flex-start'}>
-            <Box>
-              <Img src="/upwork.svg" alt="logo" />
-              <Text
-                fontSize={"16px"}
-                fontWeight={400}
-                lineHeight={"24px"}
-                mt="15px"
-                color={"white"}
-                mb={"25px"}
+            {/* Important Links */}
+            <VStack align="flex-start" spacing={3}>
+              <Text fontWeight="bold">Important Links</Text>
+              <Link>Terms</Link>
+              <Link>Privacy</Link>
+              <Link>Security Accounts</Link>
+            </VStack>
+
+            {/* Connect With Us */}
+            <VStack align="flex-start" spacing={4}>
+              <Text fontWeight="600" fontSize={'22px'} lineHeight={'28px'}>Connect With Us</Text>
+              <HStack spacing={2}>
+                
+              </HStack>
+              <Flex
+               maxW={'400px'}
+               w={'100%'}
+                borderRadius="md"
+                overflow="hidden"
+                border="2px solid"
+                borderColor="green.500"
+                h={'56px'}
+                bg={'white'}
+                alignItems={'center'}
               >
-                Innovate today, lead tomorrow.
-              </Text>
-              <Flex flexDirection={"column"} gap={"30px"}>
-              <Flex alignItems={"center"} gap={"25px"} mt={"0px !important"}>
-                <Img src="/fb-footer.svg" />
-                <Link href={"#"} color={"white"}>
-                  Facebook
-                </Link>
+                <Input
+                  placeholder="Email"
+                  border="none"
+                  _placeholder={{ color: "gray.400" }}
+                  _focus={{ boxShadow: "none" }}
+                  flex="1"
+                  bg="transparent"
+                  borderRadius="0"
+                />
+                <Button
+                  bg="#E8F6E8"
+                  color="#4CAD49"
+                  fontSize={'18px'}
+                  fontWeight={'400'}
+                  lineHeight={'28px'}
+                  borderRadius="0"
+                  _hover={{ bg: "green.200" }}
+                  h={'59px'}
+                >
+                  Subscribe
+                </Button>
               </Flex>
-              <Flex alignItems={"center"} gap={"25px"} mt={"0px !important"}>
-                <Img src="/twitter-footer.svg" />
-                <Link href={"#"} color={"white"}>
-                  Twitter
-                </Link>
-              </Flex>
-              <Flex alignItems={"center"} gap={"25px"} mt={"0px !important"}>
-                <Img src="/lindin-footer.svg" />
-                <Link href={"#"} color={"white"}>
-                  Linkedin
-                </Link>
-              </Flex>
-            </Flex>
-            </Box>
-          </Stack>
-
-          <Stack gap={'14px'} align={'flex-start'} >
-          <Box pb={'13px'} borderBottom={'1px solid #253538'} w={'70%'}>
-             <Text color={'white'}> Pages</Text>
-              </Box>
-            <Link color={'white'} href={'#'}>Home</Link>
-            <Link color={'white'} href={'#'}>Our Work</Link>
-            <Link color={'white'} href={'#'}> Case Studies</Link>
-            <Link color={'white'} href={'#'}> Services</Link>
-            <Link color={'white'} href={'#'}> About</Link>
-          </Stack>
-
-          <Stack align={'flex-start'} gap={'14px'}>
-          <Box pb={'13px'} borderBottom={'1px solid #253538'} w={'70%'}>
-             <Text color={'white'}> Services</Text>
-              </Box>
-            <Link color={'white'} href={'#'}>Web Design&Development</Link>
-            <Link color={'white'} href={'#'}>Seo Optimization</Link>
-            <Link color={'white'} href={'#'}>Ecommerce Website</Link>
-            <Link color={'white'} href={'#'}>Digital Marketing</Link>
-          </Stack>
-
-          <Stack align={'flex-start'} gap={'14px'}>
-          <Box pb={'13px'} borderBottom={'1px solid #253538'} w={'70%'}>
-             <Text color={'white'}> Support</Text>
-              </Box>
-            <Link  color={'white'} href={'#'}>Contact Us </Link>
-            <Link  color={'white'} href={'#'}>Privacy Policy</Link>
-            <Link  color={'white'} href={'#'}>Terms of Service</Link>
-           
-          </Stack>
-
-        </SimpleGrid>
+            </VStack>
+          </SimpleGrid>
+        </Box>
       </Container>
-
-      <Box
-        borderTopWidth={1}
-        borderStyle={'solid'}
-        borderColor={'#253538'}>
-        <Container
-          as={Stack}
-          maxW={'6xl'}
-          py={4}
-          direction={{ base: 'column', md: 'row' }}
-          spacing={4}
-          justify={'center'}
-          align={'center'}>
-          <Text color={'#7B7A7A'}>Copyright © 2024 Braintree. All rights reserved</Text>
-         
-        </Container>
-      </Box>
     </Box>
   );
-}
+};
+
+export default Footer;

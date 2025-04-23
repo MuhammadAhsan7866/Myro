@@ -10,60 +10,20 @@ exports.id = "vendor-chunks/@fontsource";
 exports.ids = ["vendor-chunks/@fontsource"];
 exports.modules = {
 
-/***/ "./node_modules/@fontsource/grandstander/index.css":
-/*!*********************************************************!*\
-  !*** ./node_modules/@fontsource/grandstander/index.css ***!
-  \*********************************************************/
+/***/ "./node_modules/@fontsource/poly/index.css":
+/*!*************************************************!*\
+  !*** ./node_modules/@fontsource/poly/index.css ***!
+  \*************************************************/
 /***/ (() => {
 
 
 
 /***/ }),
 
-/***/ "./node_modules/@fontsource/inter/index.css":
-/*!**************************************************!*\
-  !*** ./node_modules/@fontsource/inter/index.css ***!
-  \**************************************************/
-/***/ (() => {
-
-
-
-/***/ }),
-
-/***/ "./node_modules/@fontsource/rajdhani/index.css":
-/*!*****************************************************!*\
-  !*** ./node_modules/@fontsource/rajdhani/index.css ***!
-  \*****************************************************/
-/***/ (() => {
-
-
-
-/***/ }),
-
-/***/ "./node_modules/@fontsource/space-grotesk/400.css":
-/*!********************************************************!*\
-  !*** ./node_modules/@fontsource/space-grotesk/400.css ***!
-  \********************************************************/
-/***/ (() => {
-
-
-
-/***/ }),
-
-/***/ "./node_modules/@fontsource/space-grotesk/700.css":
-/*!********************************************************!*\
-  !*** ./node_modules/@fontsource/space-grotesk/700.css ***!
-  \********************************************************/
-/***/ (() => {
-
-
-
-/***/ }),
-
-/***/ "./node_modules/@fontsource/space-grotesk/index.css":
-/*!**********************************************************!*\
-  !*** ./node_modules/@fontsource/space-grotesk/index.css ***!
-  \**********************************************************/
+/***/ "./node_modules/@fontsource/poppins/index.css":
+/*!****************************************************!*\
+  !*** ./node_modules/@fontsource/poppins/index.css ***!
+  \****************************************************/
 /***/ (() => {
 
 

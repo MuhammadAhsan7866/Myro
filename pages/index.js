@@ -1,15 +1,12 @@
-import React from 'react'
-import LandingPage from '../src/components/app/LandingPage'
-import ClientsImages from '../src/components/app/LandingPage/clients'
-
+import { Box } from "@chakra-ui/react";
+import HomePage from "../src/components/app/Home/Index";
 
 const Home = () => {
   return (
-    <>
-      <LandingPage/>
-      
-    </>
-  )
-}
+    
+      <HomePage />
+    
+  );
+};
 
-export default Home
+export default Home;
