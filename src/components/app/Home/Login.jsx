@@ -1,5 +1,6 @@
 // components/LoginForm.js
 "use client";
+import React, { useEffect, useState } from "react";
 import {
   Box,
   Button,
@@ -13,6 +14,27 @@ import {
 import InfoBanner from "./Info";
 
 const LoginForm = () => {
+  const [greeting, setGreeting] = useState("Welcome");
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const [isChecked, setIsChecked] = useState(false);
+
+  useEffect(() => {
+    const hour = new Date().getHours();
+
+    if (hour >= 5 && hour < 12) {
+      setGreeting("Good morning");
+    } else if (hour >= 12 && hour < 17) {
+      setGreeting("Good afternoon");
+    } else if (hour >= 17 && hour < 21) {
+      setGreeting("Good evening");
+    } else {
+      setGreeting("Good night");
+    }
+  }, []);
+
+  const isFormValid = username.trim() !== "" && password.trim() !== "" && isChecked;
+
   return (
     <Container maxW="950px" mx="auto" px={{ base: 4, md: 0 }} pt={{ base: 10, md: 20 }}>
       <Box
@@ -27,7 +49,7 @@ const LoginForm = () => {
           mb={6}
           lineHeight="1.2"
         >
-          Good morning
+          {greeting}
         </Text>
 
         <Flex
@@ -48,6 +70,8 @@ const LoginForm = () => {
               border="none"
               outline="none"
               _focusVisible="none"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
             />
           </Box>
           <Box
@@ -61,9 +85,17 @@ const LoginForm = () => {
               border="none"
               outline="none"
               _focusVisible="none"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
             />
           </Box>
-          <Checkbox color="#777777">Save username</Checkbox>
+          <Checkbox
+            color="#777777"
+            isChecked={isChecked}
+            onChange={(e) => setIsChecked(e.target.checked)}
+          >
+            Save username
+          </Checkbox>
           <Text
             fontSize={{ base: "12px", md: "15px" }}
             fontWeight="400"
@@ -77,30 +109,28 @@ const LoginForm = () => {
 
         <Flex alignItems="center" justifyContent="center" mt="22px">
           <Button
-            bg="#E2DEDE"
+            bg={isFormValid ? "green.500" : "#E2DEDE"}
+            color={isFormValid ? "white" : "#B5ADAD"}
             borderRadius="50px"
             maxW="210px"
             w="100%"
-            color="#B5ADAD"
             h="46px"
-            _hover={{ bg: "#D0CCCC" }}
+            _hover={{ bg: isFormValid ? "green.600" : "#D0CCCC" }}
           >
             sign on
           </Button>
         </Flex>
 
         <Link
-         href="https://www.rmous.org/digital/forgot"
+          href="https://www.rmous.org/digital/forgot"
           display="block"
           mt={4}
           color="green.500"
           textAlign="center"
           fontSize={{ base: "14px", md: "16px" }}
-          
         >
           Forget username or password
         </Link>
-        
       </Box>
 
       <InfoBanner />
